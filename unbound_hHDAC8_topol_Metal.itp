@@ -1,0 +1,37 @@
+;
+;	File 'topol_Other2.itp' was generated
+;	By user: yzy1018 (1003)
+;	On host: localhost.localdomain
+;	At date: Mon Sep  2 18:29:28 2024
+;
+;	This is a include topology file
+;
+;	Created by:
+;	              :-) GROMACS - gmx pdb2gmx, 2021.5-plumed-2.7.4 (-:
+;	
+;	Executable:   /data/public/software/GMX20215/bin/gmx
+;	Data prefix:  /data/public/software/GMX20215
+;	Working dir:  /data/yanzhaoyue/HDAC8/Apo
+;	Command line:
+;	  gmx pdb2gmx -f model1.pdb -o HDAC.gro -ignh -ff charmm36-feb2021 -water tip3p
+;	Force field was read from current directory or a relative path - path added.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Other2              3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 378 ZN2 rtp ZN2  q +2.0
+     1         ZN    378    ZN2     ZN      1          2      65.37   ; qtot 2
+; residue 379 POT rtp POT  q +1.0
+     2        POT    379    POT    POT      2          1    39.0983   ; qtot 3
+; residue 380 POT rtp POT  q +1.0
+     3        POT    380    POT    POT      3          1    39.0983   ; qtot 4
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Other2.itp"
+#endif
+
